@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUILOMETROS POR LITRO</title>
+</head>
+<body>
+    <header>
+        <h1>QUILOMETROS POR LITRO</h1>
+    </header>
+    <section>
+        <p>
+            <input id="inputDistancia" type="text" placeholder="Distancia" onchange="setDistancia(this)" />
+        </p>
+        <p>
+            <input id="inputLitros"type="text" placeholder="Qtd de litros" onchange="setLitros(this)"/>
+        </p>
+        <p>
+            <body onclick="calcularquilometro()">
+        </p>
+        <p>  Resultado:  <span  id= "spanResultado" ></span></p>
+        <p>  Classificacao:  <span  id= "spanClassificacao"></span></p>
+    </section>
+
+    <script src="Quilometro.js"></script>
+    <script src="Limpar.js"></script>
+
+</body>
+</html>

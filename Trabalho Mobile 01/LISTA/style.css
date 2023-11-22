@@ -1,0 +1,9 @@
+.paraFazer {
+    color: red;
+    font-weight: bold;
+}
+
+.concluida {
+    color: green;
+    text-decoration: line-through;
+}

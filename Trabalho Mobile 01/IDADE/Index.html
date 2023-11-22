@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDADE</title>
+</head>
+<body>
+    <header>
+        <h1>IDADE</h1>
+    </header>
+    <section>
+        <p>
+            <input id="inputAno" type="text" placeholder="Ano" onchange="setAno(this)" />
+        </p>
+        <p>
+            <button id="calcular-idade" onclick="calcularidade()" >Calcular</button>
+            <button id="Limpar">Limpar</button>
+        </p>
+        <p>  Idade:  <span  id= "spanIdade" ></span>
+          <span  id= "spanClassificacao" ></span></p>
+    </section>
+
+    <script src="Idade.js"></script>
+    <script src="Limpar.js"></script>
+
+</body>
+</html>

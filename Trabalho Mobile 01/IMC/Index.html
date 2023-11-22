@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .magreza-grave {
+            color: #e80e0e;
+        }
+
+        .magreza-moderada {
+            color: #e7833c;
+        }
+
+        .magreza-leve {
+            color: #1244a1;
+        }
+
+        .saudavel {
+            color: #2ecc71;
+        }
+
+        .sobrepeso {
+            color: #1244a1; 
+        }
+
+        .obesidade-grau-I {
+            color: #e67e22;
+        }
+
+        .obesidade-grau-II {
+            color: #d35400;
+        }
+
+        .obesidade-grau-III {
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculadora de IMC</h2>
+
+    <label for="altura">ALTURA:</label>
+    <input type="text" id="altura" placeholder="Informe a altura">
+
+    <label for="peso">PESO:</label>
+    <input type="text" id="peso" placeholder="Informe o peso">
+
+    <button onclick="calcularIMC()">Calcular</button>
+
+    <h3>Resultado:</h3>
+    <p id="resultado"></p>
+
+    <h3>Classificação:</h3>
+    <p id="classificacao"></p>
+
+    <script>
+        function calcularIMC() {
+            
+            var altura = parseFloat(document.getElementById('altura').value);
+            var peso = parseFloat(document.getElementById('peso').value);
+
+            // Verificar se os valores são válidos
+            if (isNaN(altura) || isNaN(peso) || altura <= 0 || peso <= 0) {
+                alert("Por favor, insira valores válidos para altura e peso.");
+                return;
+            }
+
+            // Calcular o IMC
+            var imc = peso / (altura * altura);
+
+            // Exibir o resultado
+            document.getElementById('resultado').innerHTML = 'Seu IMC é: ' + imc.toFixed(2);
+            
+            var classificacao = '';
+            
+            if (imc < 16){
+                classificacao = 'Magreza grave';
+                document.getElementById('classificacao').className = 'magreza-grave';
+            }else if (imc >= 16 && imc < 17){
+                classificacao = 'Magreza Moderada';
+                document.getElementById('classificacao').className = 'magreza-moderada';                
+            } else if (imc >= 17 && imc < 18.5) {
+                classificacao = 'Magreza leve';
+                document.getElementById('classificacao').className = 'magreza-leve';
+            } else if (imc >= 18.5 && imc < 25) {
+                classificacao = 'Saudável';
+                document.getElementById('classificacao').className = 'saudavel';
+            } else if (imc >= 25 && imc < 30) {
+                classificacao = 'Sobrepeso';
+                document.getElementById('classificacao').className = 'sobrepeso';
+            } else if (imc >= 30 && imc < 35) {
+                classificacao = 'Obesidade Grau I';
+                document.getElementById('classificacao').className = 'obesidade-grau-I';
+            } else if (imc >= 35 && imc < 40) {
+                classificacao = 'Obesidade Grau II(severa)';
+                document.getElementById('classificacao').className = 'obesidade-grau-II';
+            } else {
+                classificacao = 'Obesidade Grau III(mórbida)';
+                document.getElementById('classificacao').className = 'obesidade-grau-III';
+            }
+            document.getElementById('classificacao').innerHTML = 'Classificação: ' + classificacao;
+        }
+    </script>
+    </script>
+
+</body>
+</html>

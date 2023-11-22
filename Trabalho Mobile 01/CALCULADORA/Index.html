@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <header>
+        <h1>Calculadora</h1>
+    </header>
+    <section>
+        <p>
+            <input id="inputNumero1" type="text" placeholder="Número 1" onchange="setNumero1(this)" />
+        </p>
+        <p>
+            <input id="inputNumero2"type="text" placeholder="Número 2" onchange="setNumero2(this)"/>
+        </p>
+        <p>
+            <select onchange="setOperacao(this)"id="SelectOperacao">
+            <option value="+" selected>Soma</option>
+            <option value="-">Subtração</option>
+            <option value="*">Multiplicação</option>
+            <option value="/">Divisão</option>   
+            </select>
+        </p>
+        <p>
+            <button id="calcular" onclick="calcular()" >Calcular</button>
+            <button id="Limpar" onclick="Limpar()" >Limpar</button>
+        </p>
+        <p>  Resultado:  <span  id= "spanResultado"></span></p>
+    </section>
+
+    <script src="Calculadora.js"></script>
+    <script src="Limpar.js"></script>
+
+</body>
+</html>
